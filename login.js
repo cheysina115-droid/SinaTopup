@@ -1,19 +1,23 @@
-function login(){
+import { auth } from "./firebase.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-let u=document.getElementById("user").value;
+window.login = function(){
 
-let p=document.getElementById("pass").value;
+let email = document.getElementById("user").value;
+let password = document.getElementById("pass").value;
 
-if(u=="admin" && p=="123456"){
+signInWithEmailAndPassword(auth, email, password)
+.then((userCredential)=>{
 
 document.getElementById("msg").innerHTML="✅ Login Success";
 
 window.location.href="index.html";
 
-}else{
+})
+.catch((error)=>{
 
-document.getElementById("msg").innerHTML="❌ Wrong Username or Password";
+document.getElementById("msg").innerHTML="❌ Email ឬ Password ខុស";
 
-}
+});
 
 }
