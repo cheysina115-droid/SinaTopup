@@ -18,23 +18,33 @@
 <body>
 
 <script type="module">
+
 import { auth } from "./firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        window.location.href = "Login.html";
-    }
+onAuthStateChanged(auth, (user)=>{
+
+if(!user){
+
+window.location.href="Login.html";
+
+}
+
 });
+
 </script>
 
 
 <header>
 
 <div class="logo">
+
 <img src="assets/logo.png">
+
 <h2>SinaTopup</h2>
+
 </div>
+
 
 <nav>
 
@@ -80,6 +90,7 @@ onAuthStateChanged(auth, (user) => {
 
 <h2>Diamond Packages</h2>
 
+
 <div class="card">
 
 <h3>86 Diamonds</h3>
@@ -90,6 +101,7 @@ onAuthStateChanged(auth, (user) => {
 
 </div>
 
+
 <div class="card">
 
 <h3>172 Diamonds</h3>
@@ -98,83 +110,4 @@ onAuthStateChanged(auth, (user) => {
 
 <button>Buy</button>
 
-</div><div class="card">
-
-<h3>257 Diamonds</h3>
-
-<p>$4.50</p>
-
-<button>Buy</button>
-
 </div>
-
-
-<div class="card">
-
-<h3>344 Diamonds</h3>
-
-<p>$6.00</p>
-
-<button>Buy</button>
-
-</div>
-
-
-</section>
-
-
-
-<section class="weekly">
-
-<h2>Weekly Pass</h2>
-
-
-<div class="card">
-
-<h3>Weekly Diamond Pass</h3>
-
-<p>$2.00</p>
-
-<button>Buy</button>
-
-</div>
-
-
-</section>
-
-
-
-<section class="payment">
-
-<h2>ABA KHQR</h2>
-
-<img src="assets/aba-qr.png">
-
-
-<p>CHEY SINA</p>
-
-
-<input type="file">
-
-
-<button>Confirm Payment</button>
-
-
-</section>
-
-
-
-<footer>
-
-<p>© 2026 SinaTopup. All Rights Reserved.</p>
-
-</footer>
-
-
-
-<script src="script.js"></script>
-
-
-</body>
-
-</html>
